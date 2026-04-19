@@ -1,37 +1,45 @@
 {
-    "name": "My YT Bookmarks",
-    "version": "0.1.0",
-    "description": "Saving timestamps in YT videos",
-    "permissions": ["storage", "tabs"],
-    "host_permissions": ["https://*.youtube.com/*"],
-    "background": {
-      "service_worker": "background.js"
+  "name": "Better Agilix Buzz",
+  "version": "0.1.0",
+  "description": "Making BrightThinker more customizeable",
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://*.agilixbuzz.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.agilixbuzz.com/*"
+      ],
+      "js": [
+        "contentScript.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [],
+      "matches": [
+        "*://*.agilixbuzz.com/*"
+      ]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "assets/ext-icon.png",
+      "24": "assets/ext-icon.png",
+      "32": "assets/ext-icon.png"
     },
-    "content_scripts": [
-      {
-        "matches": ["https://*.youtube.com/*"],
-        "js": ["contentScript.js"]
-      }
-    ],
-    "web_accessible_resources": [
-      {
-        "resources": [
-          "assets/bookmark.png",
-          "assets/play.png",
-          "assets/delete.png",
-          "assets/save.png"
-        ],
-        "matches": ["https://*.youtube.com/*"]
-      }
-    ],
-    "action": {
-      "default_icon": {
-        "16": "assets/ext-icon.png",
-        "24": "assets/ext-icon.png",
-        "32": "assets/ext-icon.png"
-      },
-      "default_title": "My YT Bookmarks",
-      "default_popup": "popup.html"
-    },
-    "manifest_version": 3
+    "default_title": "Better Agilix Buzz",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 3
 }

@@ -2,9 +2,26 @@
 <script type="module" src="popup.js"></script>
 
 <div class="container">
-  <div>
-    <div class="title">Your bookmarks for this video</div>
+  <div class="card">
+    <div class="title">Better Agilix Buzz Controls</div>
 
-    <div class="bookmarks" id="bookmarks"></div>
+    <label class="label" for="bg-image-url">Background image URL</label>
+    <input type="text" title="Enter background image url here" id="bg-image-url"
+      placeholder="https://example.com/image.jpg" />
+
+    <button id="set-button" class="primary">
+      Set as background image for this course
+    </button>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-title">Saved backgrounds</div>
+        <button id="refresh-button" class="ghost" type="button">Refresh</button>
+      </div>
+
+      <div id="saved-list" class="saved-list">
+        <div class="muted">No saved backgrounds yet.</div>
+      </div>
+    </div>
   </div>
 </div>
